@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salman Trader - Halal Trading Academy</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Amir (Arabic) & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            800: '#064E3B',
+                            900: '#022C22',
+                            700: '#0F766E',
+                            600: '#0D9488',
+                        },
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            700: '#B45309',
+                        },
+                        telegram: {
+                            500: '#229ED9',
+                            600: '#0088cc',
+                            700: '#0077b5',
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['Amiri', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles & Islamic Geometric Pattern background */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #011910;
+            color: #1a1a1a;
+        }
+
+        .islamic-bg {
+            background-color: #042f22;
+            background-image: radial-gradient(#d97706 0.75px, transparent 0.75px), radial-gradient(#d97706 0.75px, #042f22 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            background-opacity: 0.08;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-btn-gradient {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        }
+
+        .gold-btn-gradient:hover {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+        }
+
+        .telegram-pulse {
+            box-shadow: 0 0 0 0 rgba(34, 158, 217, 0.7);
+            animation: pulse-blue 2s infinite;
+        }
+
+        @keyframes pulse-blue {
+            0% {
+                transform: scale(0.98);
+                box-shadow: 0 0 0 0 rgba(34, 158, 217, 0.7);
+            }
+            70% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 12px rgba(34, 158, 217, 0);
+            }
+            100% {
+                transform: scale(0.98);
+                box-shadow: 0 0 0 0 rgba(34, 158, 217, 0);
+            }
+        }
+
+        /* Glassmorphic cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+        }
+
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(217, 119, 6, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #022C22;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D97706;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex justify-center items-center p-0 md:p-6 bg-slate-950">
+
+    <!-- Mobile Frame Outer Container -->
+    <div class="w-full max-w-[430px] min-h-screen md:min-h-[880px] bg-emerald-950 md:rounded-[40px] md:shadow-[0_0_50px_rgba(217,119,6,0.25)] md:border-[8px] md:border-emerald-800/80 overflow-hidden relative flex flex-col justify-between">
+        
+        <!-- TOP DECORATIVE BAR -->
+        <div class="hidden md:flex justify-between items-center px-6 pt-3 pb-1 text-xs text-emerald-400 bg-emerald-950 border-b border-emerald-800/40 z-40">
+            <span class="font-semibold"><i class="fa-paper-plane fab text-telegram-500 mr-1"></i> Salman Trader Official Telegram</span>
+            <div class="flex items-center space-x-2">
+                <span class="bg-telegram-500/20 text-telegram-300 px-2 py-0.5 rounded-full text-[10px] border border-telegram-500/30">● 18,400+ Members</span>
+                <i class="fa-solid fa-battery-full"></i>
+            </div>
+        </div>
+
+        <!-- MAIN SCROLLABLE CONTENT CONTAINER -->
+        <div class="flex-1 overflow-y-auto pb-24 islamic-bg">
+
+            <!-- 1. BISMILLAH HEADER & TOP BANNER -->
+            <header class="pt-6 pb-4 px-4 text-center border-b border-gold-500/20 relative">
+                <!-- Arabic Bismillah -->
+                <p class="font-arabic text-xl md:text-2xl text-gold-400 font-bold mb-1 tracking-wide">
+                    بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                </p>
+                <!-- Brand Title -->
+                <h2 class="text-lg font-extrabold text-white tracking-wide uppercase gold-gradient-text">
+                    SALMAN TRADER
+                </h2>
+                <p class="text-[10px] text-emerald-200 uppercase tracking-widest font-semibold">
+                    India's Trusted Halal Trading Academy
+                </p>
+                
+                <!-- Security Badge -->
+                <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-900/80 border border-gold-500/30 rounded-full text-xs text-gold-300">
+                    <i class="fa-solid fa-shield-halal text-gold-400"></i>
+                    <span>Verified Shariah Compliant Guidance</span>
+                </div>
+            </header>
+
+            <!-- 2. HERO SECTION -->
+            <section class="px-4 pt-5 pb-6 text-center relative">
+                
+                <!-- Main Headline -->
+                <h1 class="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-3">
+                    <span class="gold-gradient-text">Salman Trader</span> Ke Sath Shariah Compliant Halal Trading Seekhein!
+                </h1>
+
+                <!-- Sub-headline in Hinglish -->
+                <p class="text-slate-200 text-sm leading-relaxed mb-6 font-normal">
+                    Bina Riba (Sood) aur Gambling ke Stock Market me Profit banayein. Daily Halal Stock Alerts, Live Analysis aur Salman Trader ki VIP Guidance bilkul Free.
+                </p>
+
+                <!-- Video / Visual Banner Mockup -->
+                <div class="relative rounded-2xl overflow-hidden border-2 border-gold-500/40 shadow-xl mb-6 bg-emerald-900/60 group">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Salman Trader Halal Trading Dashboard" class="w-full h-48 object-cover opacity-80 group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent"></div>
+                    
+                    <!-- Telegram Overlay Banner on Image -->
+                    <div onclick="openTelegramModal()" class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] cursor-pointer">
+                        <div class="w-16 h-16 bg-telegram-500 text-white rounded-full flex items-center justify-center text-3xl shadow-lg shadow-telegram-500/50 mb-2 transform group-hover:scale-110 transition">
+                            <i class="fa-brands fa-telegram ml-0.5"></i>
+                        </div>
+                        <span class="bg-emerald-900/90 text-gold-300 border border-gold-500/40 text-xs px-3.5 py-1.5 rounded-full font-semibold flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Join Salman Trader Telegram
+                        </span>
+                    </div>
+
+                    <!-- Badge on Image -->
+                    <div class="absolute top-3 left-3 bg-telegram-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider flex items-center gap-1">
+                        <i class="fa-solid fa-users"></i> 18,400+ Members
+                    </div>
+                </div>
+
+                <!-- Primary CTA Buttons Grid (Telegram Priority + WhatsApp Secondary) -->
+                <div class="space-y-2.5">
+                    <!-- Main Telegram CTA -->
+                    <button onclick="openTelegramModal()" class="telegram-pulse flex items-center justify-center gap-3 w-full bg-telegram-500 hover:bg-telegram-600 text-white font-bold py-4 px-6 rounded-2xl shadow-xl shadow-telegram-500/30 text-base transition border border-telegram-400/40">
+                        <i class="fa-brands fa-telegram text-2xl text-white"></i>
+                        <span>JOIN SALMAN TRADER TELEGRAM</span>
+                    </button>
+
+                    <!-- Secondary WhatsApp CTA -->
+                    <a href="https://wa.me/?text=Assalamu%20Alaikum%20Salman%20Trader,%20mujhe%20Halal%20Trading%20Telegram%20Channel%20join%20karna%20hai" target="_blank" class="flex items-center justify-center gap-2 w-full bg-emerald-900/80 hover:bg-emerald-800 text-emerald-200 font-semibold py-2.5 px-4 rounded-xl text-xs border border-emerald-700/60 transition">
+                        <i class="fa-brands fa-whatsapp text-lg text-green-400"></i>
+                        <span>Prefer WhatsApp? Message Salman Trader</span>
+                    </a>
+
+                    <p class="text-[11px] text-emerald-300/80 flex items-center justify-center gap-1 pt-1">
+                        <i class="fa-solid fa-shield-halal text-gold-400"></i> Direct Guidance by Mentor Salman Trader
+                    </p>
+                </div>
+
+                <!-- Trust Stats Grid -->
+                <div class="grid grid-cols-3 gap-2 mt-6 pt-5 border-t border-emerald-800/60">
+                    <div class="bg-emerald-900/40 border border-emerald-800 p-2 rounded-xl text-center">
+                        <p class="text-gold-400 text-lg font-bold">18,400+</p>
+                        <p class="text-[10px] text-emerald-200">Telegram Members</p>
+                    </div>
+                    <div class="bg-emerald-900/40 border border-emerald-800 p-2 rounded-xl text-center">
+                        <p class="text-gold-400 text-lg font-bold">0% Riba</p>
+                        <p class="text-[10px] text-emerald-200">Shariah Screening</p>
+                    </div>
+                    <div class="bg-emerald-900/40 border border-emerald-800 p-2 rounded-xl text-center">
+                        <p class="text-gold-400 text-lg font-bold">3-5 Daily</p>
+                        <p class="text-[10px] text-emerald-200">Free Halal Alerts</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. TELEGRAM CHANNEL HIGHLIGHTS & PERKS -->
+            <section class="px-4 py-6 bg-gradient-to-b from-emerald-900/60 to-slate-900/80 border-y border-gold-500/20">
+                <div class="text-center mb-5">
+                    <span class="text-[11px] bg-telegram-500/20 text-telegram-300 px-3 py-0.5 rounded-full border border-telegram-500/30 font-semibold">VIP COMMUNITY</span>
+                    <h2 class="text-xl font-bold text-white mt-2">Telegram Channel Me Kya Milega?</h2>
+                    <p class="text-xs text-emerald-200 mt-1">Free me paayein yeh saare exclusive benefits:</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <!-- Feature 1 -->
+                    <div class="bg-emerald-950/80 border border-emerald-800 p-3.5 rounded-2xl text-left relative overflow-hidden">
+                        <div class="w-9 h-9 bg-telegram-500/20 text-telegram-400 rounded-xl flex items-center justify-center text-lg mb-2">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-xs font-bold text-white">Daily Stock Signals</h3>
+                        <p class="text-[10px] text-slate-300 mt-1 leading-tight">Entry, Target aur StopLoss ke sath Halal Stock alerts.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-emerald-950/80 border border-emerald-800 p-3.5 rounded-2xl text-left relative overflow-hidden">
+                        <div class="w-9 h-9 bg-gold-500/20 text-gold-400 rounded-xl flex items-center justify-center text-lg mb-2">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-xs font-bold text-white">Shariah Report</h3>
+                        <p class="text-[10px] text-slate-300 mt-1 leading-tight">Har stock ki complete Halal screening compliance pdf.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-emerald-950/80 border border-emerald-800 p-3.5 rounded-2xl text-left relative overflow-hidden">
+                        <div class="w-9 h-9 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-lg mb-2">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xs font-bold text-white">Live Market Chart</h3>
+                        <p class="text-[10px] text-slate-300 mt-1 leading-tight">Chart Breakouts aur technical view Hindi me.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-emerald-950/80 border border-emerald-800 p-3.5 rounded-2xl text-left relative overflow-hidden">
+                        <div class="w-9 h-9 bg-purple-500/20 text-purple-300 rounded-xl flex items-center justify-center text-lg mb-2">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xs font-bold text-white">Islamic Finance</h3>
+                        <p class="text-[10px] text-slate-300 mt-1 leading-tight">Zakat calculation & Riba-free investment guidance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. INTERACTIVE TELEGRAM SIGNAL PREVIEW / DEMO BOX -->
+            <section class="px-4 py-6">
+                <div class="text-center mb-4">
+                    <span class="text-xs text-gold-400 font-semibold tracking-wider uppercase">Live Telegram Channel</span>
+                    <h2 class="text-lg font-bold text-white mt-1">Salman Trader ke Real Signals!</h2>
+                    <p class="text-xs text-slate-300">Telegram Channel par post hone wale real sample signals:</p>
+                </div>
+
+                <!-- Telegram Post UI Card Mockup -->
+                <div class="bg-[#17212b] border border-[#2b394a] rounded-2xl p-4 shadow-2xl relative">
+                    <!-- Post Header -->
+                    <div class="flex items-center gap-3 pb-3 mb-3 border-b border-slate-700/60">
+                        <div class="w-10 h-10 rounded-full bg-emerald-800 text-gold-400 font-bold flex items-center justify-center border border-gold-500/40 text-sm">
+                            ST
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-1.5">
+                                <h4 class="text-xs font-bold text-white">Salman Trader Official</h4>
+                                <i class="fa-solid fa-circle-check text-telegram-500 text-xs"></i>
+                            </div>
+                            <p class="text-[10px] text-slate-400">18,420 subscribers • Verified Mentor</p>
+                        </div>
+                        <span class="text-[10px] bg-green-500/20 text-green-400 border border-green-500/30 px-2 py-0.5 rounded">
+                            ● ACTIVE SIGNAL
+                        </span>
+                    </div>
+
+                    <!-- Signal Content (Telegram Message Body) -->
+                    <div class="text-xs text-slate-200 font-mono space-y-2 leading-relaxed bg-[#0e1621] p-3 rounded-xl border border-slate-800">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-1.5">
+                            <span class="text-gold-400 font-bold"><i class="fa-solid fa-gem mr-1"></i> SALMAN TRADER HALAL ALERT</span>
+                            <span class="text-[9px] bg-emerald-900 text-emerald-300 px-1.5 py-0.5 rounded">Shariah Screened Stock</span>
+                        </div>
+                        <p class="text-white font-semibold">📈 Stock: TATA MOTORS (EQ)</p>
+                        <p class="text-emerald-400">✔ Buy Range: ₹980 - ₹985</p>
+                        <p class="text-gold-300">🎯 Target 1: ₹1,020</p>
+                        <p class="text-gold-300">🎯 Target 2: ₹1,060</p>
+                        <p class="text-red-400">⛔ StopLoss: ₹950</p>
+                        <p class="text-[10px] text-slate-400 pt-1 italic">
+                            📌 Salman Trader Note: Shariah Debt Ratio &lt; 30%, Strong Technical Breakout on Daily Chart.
+                        </p>
+                    </div>
+
+                    <!-- Telegram Footer Info -->
+                    <div class="flex justify-between items-center mt-3 text-[10px] text-slate-400 px-1">
+                        <span><i class="fa-eye text-slate-500 mr-1"></i> 14.2k views</span>
+                        <span>10:45 AM</span>
+                    </div>
+
+                    <!-- Direct Join Overlay CTA -->
+                    <button onclick="openTelegramModal()" class="mt-3 w-full bg-telegram-600 hover:bg-telegram-500 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-telegram text-base"></i>
+                        <span>Aise Signals Ke Liye Salman Trader Telegram Join Karein</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 5. HALAL VS HARAM CRITERIA SECTION -->
+            <section class="px-4 py-6 bg-emerald-900/50 border-y border-gold-500/20">
+                <div class="text-center mb-5">
+                    <span class="text-xs text-gold-400 font-semibold tracking-wider uppercase">Shariah Guidelines</span>
+                    <h2 class="text-xl font-bold text-white mt-1">Trading Halal Kab Hoti Hai?</h2>
+                    <p class="text-xs text-emerald-200 mt-1">Islam me Business aur Share Trading ke Shariah Rules</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="glass-card p-3.5 rounded-xl flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-800/80 border border-emerald-500/40 flex items-center justify-center shrink-0 text-emerald-300 mt-0.5">
+                            <i class="fa-solid fa-check text-gold-400 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Ethical & Halal Stocks Only</h3>
+                            <p class="text-xs text-slate-300 mt-0.5">Liquor, Gambling, Pork ya Interest (Sood) waali companies me Paisa invest nahi hota.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-3.5 rounded-xl flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-800/80 border border-emerald-500/40 flex items-center justify-center shrink-0 text-emerald-300 mt-0.5">
+                            <i class="fa-solid fa-ban text-gold-400 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">No Riba / Zero Interest Account</h3>
+                            <p class="text-xs text-slate-300 mt-0.5">Swap-free accounts aur Shariah screening se hum interest charges ko zero karte hain.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-3.5 rounded-xl flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-800/80 border border-emerald-500/40 flex items-center justify-center shrink-0 text-emerald-300 mt-0.5">
+                            <i class="fa-solid fa-chart-pie text-gold-400 text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Real Business Ownership</h3>
+                            <p class="text-xs text-slate-300 mt-0.5">Yeh koi Satta (Gambling) nahi hai. Aap asli business ke shares (hisse) khareedte hain.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. INTERACTIVE PROFIT POTENTIAL CALCULATOR -->
+            <section class="px-4 py-6 bg-slate-900/80">
+                <div class="bg-gradient-to-b from-emerald-900/80 to-slate-900 p-4 rounded-2xl border border-gold-500/30">
+                    <div class="text-center mb-4">
+                        <span class="text-[10px] bg-gold-500/20 text-gold-300 px-2.5 py-0.5 rounded-full border border-gold-500/30 font-semibold">INTERACTIVE TOOL</span>
+                        <h3 class="text-base font-bold text-white mt-1">Apna Profit Potential Dekhein</h3>
+                        <p class="text-xs text-slate-300">Agar aap Shariah guidance se investment shuru karte hain:</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs text-emerald-200 mb-1">
+                                <span>Monthly Investment:</span>
+                                <span id="inv-amount-text" class="font-bold text-gold-400">₹5,000 / month</span>
+                            </div>
+                            <input type="range" id="inv-slider" min="1000" max="50000" step="1000" value="5000" class="w-full h-2 bg-emerald-950 rounded-lg appearance-none cursor-pointer accent-gold-500">
+                        </div>
+
+                        <div class="p-3 bg-emerald-950/80 rounded-xl border border-emerald-800/80 flex justify-between items-center">
+                            <div>
+                                <p class="text-[11px] text-slate-400">Expected 1-Year Portfolio Value*</p>
+                                <p id="calc-result" class="text-xl font-extrabold text-gold-400">₹72,400</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-emerald-400 bg-emerald-900/80 px-2 py-1 rounded">~18-24% Annual Return</span>
+                            </div>
+                        </div>
+
+                        <p class="text-[10px] text-slate-400 text-center italic">*Past performance indicators are for learning & screening demonstration only.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. LEAD FORM SECTION -->
+            <section id="join-form" class="px-4 py-6 bg-gradient-to-b from-emerald-900 to-emerald-950 border-t border-gold-500/30">
+                <div class="bg-emerald-950 p-5 rounded-3xl border border-gold-500/40 shadow-2xl relative">
+                    <div class="text-center mb-4">
+                        <h2 class="text-lg font-extrabold text-white">Salman Trader VIP Pass</h2>
+                        <p class="text-xs text-emerald-200 mt-1">Details fill karein aur Salman Trader ke Telegram Channel ka direct link paayein.</p>
+                    </div>
+
+                    <form id="leadForm" class="space-y-3.5" onsubmit="handleFormSubmit(event)">
+                        <div>
+                            <label class="block text-xs font-semibold text-emerald-200 mb-1">Aapka Naam (Name)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-emerald-500">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+                                <input type="text" id="userName" required placeholder="Ex. Tariq Khan" class="w-full pl-9 pr-3 py-3 bg-emerald-900/60 border border-emerald-700/80 rounded-xl text-xs text-white placeholder-emerald-400/60 focus:outline-none focus:border-gold-500 transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-emerald-200 mb-1">WhatsApp / Phone Number</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-emerald-500">
+                                    <i class="fa-solid fa-phone"></i>
+                                </span>
+                                <input type="tel" id="userPhone" pattern="[0-9]{10}" required placeholder="10 Digit Mobile Number" class="w-full pl-9 pr-3 py-3 bg-emerald-900/60 border border-emerald-700/80 rounded-xl text-xs text-white placeholder-emerald-400/60 focus:outline-none focus:border-gold-500 transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-emerald-200 mb-1">Trading Experience</label>
+                            <select id="userExp" class="w-full px-3 py-3 bg-emerald-900/60 border border-emerald-700/80 rounded-xl text-xs text-white focus:outline-none focus:border-gold-500 transition">
+                                <option value="beginner">Main Ekdum Beginner Hu (Naya Hu)</option>
+                                <option value="intermediate">Thodi Boht Knowledge Hai</option>
+                                <option value="experienced">Already Trading Kar Raha Hu</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full telegram-pulse bg-telegram-500 hover:bg-telegram-600 text-white font-extrabold py-3.5 px-4 rounded-xl shadow-lg text-sm transition transform active:scale-95 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-telegram text-lg"></i>
+                            <span>GET FREE TELEGRAM LINK NOW</span>
+                        </button>
+                    </form>
+
+                    <!-- Success Message Container -->
+                    <div id="formSuccess" class="hidden text-center py-6">
+                        <div class="w-12 h-12 bg-telegram-500/20 border border-telegram-500/40 text-telegram-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-2">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">JazakAllah Khair!</h3>
+                        <p class="text-xs text-emerald-200 mt-1">Aapki details submit ho gayi hain. Niche button par click karke Telegram join karein.</p>
+                        <button onclick="openTelegramModal()" class="mt-4 inline-flex items-center gap-2 bg-telegram-500 hover:bg-telegram-600 text-white text-xs font-bold px-5 py-3 rounded-xl shadow-lg">
+                            <i class="fa-brands fa-telegram text-lg"></i> Open Telegram Channel
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ) -->
+            <section class="px-4 py-6 border-t border-emerald-800">
+                <div class="text-center mb-5">
+                    <span class="text-xs text-gold-400 font-semibold tracking-wider uppercase">Got Questions?</span>
+                    <h2 class="text-xl font-bold text-white mt-1">Aam Sawal Jawab (FAQ)</h2>
+                </div>
+
+                <div class="space-y-2.5">
+                    <!-- FAQ 1 -->
+                    <div class="border border-emerald-800 bg-emerald-900/40 rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(1)" class="w-full p-3 text-left font-semibold text-xs text-white flex justify-between items-center">
+                            <span>Kya Telegram Channel Bilkul Free Hai?</span>
+                            <i id="faq-icon-1" class="fa-solid fa-chevron-down text-gold-400 text-xs transition-transform"></i>
+                        </button>
+                        <div id="faq-ans-1" class="hidden p-3 pt-0 text-[11px] text-emerald-200 border-t border-emerald-800/40 leading-relaxed">
+                            Haan! Hamara Official Telegram Channel 100% Free hai. Yahan daily market updates aur Halal stock signals provide kiye jaate hain.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="border border-emerald-800 bg-emerald-900/40 rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(2)" class="w-full p-3 text-left font-semibold text-xs text-white flex justify-between items-center">
+                            <span>Kya Stock Market Trading Such Me Halal Hai?</span>
+                            <i id="faq-icon-2" class="fa-solid fa-chevron-down text-gold-400 text-xs transition-transform"></i>
+                        </button>
+                        <div id="faq-ans-2" class="hidden p-3 pt-0 text-[11px] text-emerald-200 border-t border-emerald-800/40 leading-relaxed">
+                            Haan! Agar aap un companies ke shares khareedte hain jo Halal business karti hain (No Liquor, No Gambling, No Interest) aur Swap-Free account use karte hain, toh trading 100% Halal hai.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="border border-emerald-800 bg-emerald-900/40 rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(3)" class="w-full p-3 text-left font-semibold text-xs text-white flex justify-between items-center">
+                            <span>Trading Shuru Karne Ke Liye Kitne Paise Chahiye?</span>
+                            <i id="faq-icon-3" class="fa-solid fa-chevron-down text-gold-400 text-xs transition-transform"></i>
+                        </button>
+                        <div id="faq-ans-3" class="hidden p-3 pt-0 text-[11px] text-emerald-200 border-t border-emerald-800/40 leading-relaxed">
+                            Aap sirf ₹1,000 se bhi Shariah Compliant stocks me investment aur learning shuru kar sakte hain. Hum beginner friendly guidance dete hain.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="px-4 py-6 text-center border-t border-emerald-900 text-emerald-400/60 text-[10px]">
+                <p class="font-arabic text-sm text-gold-500/80 mb-1">وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ</p>
+                <p>© 2026 Salman Trader - Halal Trading Academy. All Rights Reserved.</p>
+                <p class="mt-1">Educational Purpose Only. Trading involves market risks.</p>
+            </footer>
+
+        </div>
+
+        <!-- STICKY BOTTOM DUAL ACTION CONVERSION BAR FOR MOBILE -->
+        <div class="absolute bottom-0 left-0 right-0 p-3 bg-emerald-950/95 backdrop-blur-md border-t border-gold-500/30 flex items-center gap-2 z-40">
+            <div class="flex-1">
+                <p class="text-[9px] text-emerald-300">Salman Trader VIP</p>
+                <p class="text-xs font-bold text-white flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span> 18.4k+ Members
+                </p>
+            </div>
+            
+            <!-- Telegram Sticky Button -->
+            <button onclick="openTelegramModal()" class="telegram-pulse bg-telegram-500 hover:bg-telegram-600 text-white font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 shadow-lg shadow-telegram-500/30 active:scale-95 transition">
+                <i class="fa-brands fa-telegram text-base"></i>
+                <span>Join Salman Trader</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- TELEGRAM POPUP MODAL -->
+    <div id="telegramModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-emerald-950 border border-gold-500/40 w-full max-w-sm rounded-3xl p-5 relative text-center shadow-2xl">
+            <!-- Close Button -->
+            <button onclick="closeTelegramModal()" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg w-8 h-8 rounded-full bg-emerald-900 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="w-16 h-16 bg-telegram-500 text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-3 shadow-lg shadow-telegram-500/40">
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+            
+            <h3 class="text-lg font-bold text-white">Salman Trader Official Channel</h3>
+            <p class="text-xs text-emerald-200 mt-1">Strictly Shariah Screened Stock Signals & Market Updates</p>
+
+            <div class="my-4 p-3 bg-emerald-900/60 rounded-xl border border-emerald-800 text-left space-y-2">
+                <div class="flex items-center gap-2 text-xs text-slate-200">
+                    <i class="fa-solid fa-check text-green-400"></i> Free Daily Halal Stock Signals
+                </div>
+                <div class="flex items-center gap-2 text-xs text-slate-200">
+                    <i class="fa-solid fa-check text-green-400"></i> Zero Sood / Riba Guidance
+                </div>
+                <div class="flex items-center gap-2 text-xs text-slate-200">
+                    <i class="fa-solid fa-check text-green-400"></i> Live Market Technical Analysis
+                </div>
+            </div>
+
+            <!-- Direct Telegram Link -->
+            <a href="https://t.me/+7RoYbsFbWOdhOGQ1" target="_blank" class="w-full bg-telegram-500 hover:bg-telegram-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg text-sm transition flex items-center justify-center gap-2 mb-2">
+                <i class="fa-brands fa-telegram text-lg"></i>
+                <span>OPEN TELEGRAM APP NOW</span>
+            </a>
+
+            <!-- Copy Link Button -->
+            <button onclick="copyTelegramLink()" class="w-full bg-emerald-900/80 hover:bg-emerald-800 text-emerald-200 font-semibold py-2.5 px-4 rounded-xl text-xs border border-emerald-700/60 transition flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-copy"></i>
+                <span id="copyBtnText">Copy Telegram Channel Link</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const telegramChannelUrl = "https://t.me/+7RoYbsFbWOdhOGQ1";
+
+        // Open Telegram Modal
+        function openTelegramModal() {
+            document.getElementById('telegramModal').classList.remove('hidden');
+            document.getElementById('telegramModal').classList.add('flex');
+        }
+
+        // Close Telegram Modal
+        function closeTelegramModal() {
+            document.getElementById('telegramModal').classList.remove('flex');
+            document.getElementById('telegramModal').classList.add('hidden');
+        }
+
+        // Copy Telegram Link
+        function copyTelegramLink() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = telegramChannelUrl;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            const copyBtnText = document.getElementById('copyBtnText');
+            copyBtnText.innerText = "Copied to Clipboard!";
+            setTimeout(() => {
+                copyBtnText.innerText = "Copy Telegram Channel Link";
+            }, 2000);
+        }
+
+        // Interactive Profit Potential Calculator
+        const invSlider = document.getElementById('inv-slider');
+        const invText = document.getElementById('inv-amount-text');
+        const calcResult = document.getElementById('calc-result');
+
+        invSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            invText.innerText = `₹${val.toLocaleString('en-IN')} / month`;
+            
+            // Formula mockup for ~20% annual ROI
+            const yearlyValue = Math.round(val * 12 * 1.205);
+            calcResult.innerText = `₹${yearlyValue.toLocaleString('en-IN')}`;
+        });
+
+        // FAQ Toggle Accordion
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-ans-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                ans.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Form Submission Handling
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            // Hide Form, Show Success State
+            document.getElementById('leadForm').classList.add('hidden');
+            const successDiv = document.getElementById('formSuccess');
+            successDiv.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
